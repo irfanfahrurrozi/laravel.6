@@ -17,10 +17,10 @@
     <section style="padding-top:80px">
         <div class="container">
             <div class="rows">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 ">
                     <div class="card">
                         <div class="card-header">
-                            Add Student
+                            Add Student <a href="/add-student" class="btn btn-primary" style="float:right"> Add new </a>
                         </div>
 
                         <div class="card-body">
@@ -29,6 +29,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Profile Image</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
 
@@ -37,7 +38,9 @@
                                         <tr>
                                             <td>{{$student->name}}</td>
                                             <td><img src="{{asset('images')}}/{{$student->profileimage}}" style="max-width:60px;"/></td>
-                                            
+                                            <td>
+                                                <a href="/edit-student/{{$student->id}}" class="btn btn-info">Edit</a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
