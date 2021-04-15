@@ -26,6 +26,11 @@ class StudentController extends Controller
         return back()->with('student_added', 'Student data has been added');
     }
 
+    public function students()
+    {
+        $students = student::all();
+        return view('all-students', compact('students'));
+    }
 
 
 }
