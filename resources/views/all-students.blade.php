@@ -24,6 +24,12 @@
                         </div>
 
                         <div class="card-body">
+
+                        @if (Session::has('student_deleted'))
+                            <div class="alert alert-danger" role="alert">
+                                {{Session::get('student_deleted')}}
+                            </div>  
+                        @endif
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -40,6 +46,7 @@
                                             <td><img src="{{asset('images')}}/{{$student->profileimage}}" style="max-width:60px;"/></td>
                                             <td>
                                                 <a href="/edit-student/{{$student->id}}" class="btn btn-info">Edit</a>
+                                                <a href="/delete-student/{{$student->id}}" class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach

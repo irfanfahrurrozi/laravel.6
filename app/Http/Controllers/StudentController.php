@@ -53,4 +53,12 @@ class StudentController extends Controller
         return back()->with('student_updated', 'Student has been updated');
     }
 
+    public function deleteStudent($id)
+    {
+        $student = Student::find($id);
+        unlink(public_path('images'.'/'.$student->profileimage));
+        $student->delete();
+        return back()->with('student_deleted', 'student has beend deleted');
+    }
+
 }
