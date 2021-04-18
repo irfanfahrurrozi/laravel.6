@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,9 @@ Route::get('delete-student/{id}', [StudentController::class, 'deleteStudent']);
 Route::get('contact-us', [ContactController::class, 'contact']);
 
 Route::post('send-message', [ContactController::class, 'sendEmail'])->name('contact.send');
+
+Route::get('add-product', [ProductController::class, 'addProducts']);
+
+Route::get('search', [ProductController::class, 'search']);
+
+Route::get('autorcomplete', [ProductController::class, 'autocomplete'])->name('autocomplete');
