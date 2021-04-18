@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\EmployeeController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +44,5 @@ Route::get('add-product', [ProductController::class, 'addProducts']);
 Route::get('search', [ProductController::class, 'search']);
 
 Route::get('autorcomplete', [ProductController::class, 'autocomplete'])->name('autocomplete');
+
+Route::get('employee', [EmployeeController::class, 'index' ]);
